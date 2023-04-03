@@ -286,15 +286,11 @@ data  =np.delete(data , [0])
 x = ['PHARMA_U' , 'NIFTYPSE_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-
-\# creating the dataset# creating the bar plot
-
-```
+# creating the dataset# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of Nifty with Other Indices")
+plt.title("Correlation of Nifty with Other Indices")
 plt.show()
 ```
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.006.png)# creating the dataset
@@ -304,71 +300,56 @@ data  =np.delete(data , [0])
 x = ['PHARMA_U' , 'NIFTYPSE_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of PHARMA with Other Indices")
+plt.title("Correlation of PHARMA with Other Indices")
 plt.show()
 ```
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.007.png)
-
-\# creating the dataset
-
 ```
+# creating the dataset
 data = pd.read_csv('Final_pearson.csv')['NIFTYPSE_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['PHARMA_U' , 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of NIFTYPSE with Other Indices")
+plt.title("Correlation of NIFTYPSE with Other Indices")
 plt.show()
 ```
-[0.48 1.   0.76 0.84 0.61 0.8  0.39 0.65]
+
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.008.png)
-
-\# creating the dataset
 ```
+# creating the dataset
 data = pd.read_csv('Final_pearson.csv')['NIFTYMETAL_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['NIFTY_U ' , 'NIFTYPSE_U', 'PHARMA_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of NIFTYMETAL with Other Indices")
+plt.title("Correlation of NIFTYMETAL with Other Indices")
 plt.show()
 ```
-[0.5  0.76 1.   0.67 0.61 0.74 0.44 0.65]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.009.png)
-
-\# creating the dataset
 ```
+# creating the dataset
 data = pd.read\_csv('Final_pearson.csv')['NIFTYENERGY_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'PHARMA_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
@@ -378,17 +359,14 @@ plt.show()
 
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.010.png)
-
-\# creating the dataset
 ```
+# creating the dataset
 data = pd.read_csv('Final_pearson.csv')['NIFTYBANK_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
@@ -398,61 +376,52 @@ plt.show()
 
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.011.png)
-
-\# creating the dataset
 ```
+# creating the dataset
 data = pd.read_csv('Final_pearson.csv')['INFRA_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of INFRA with Other Indices")
+plt.title("Correlation of INFRA with Other Indices")
 plt.show()
 ```
 
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.012.png)
-
-\# creating the dataset
 ```
+# creating the dataset
 data = pd.read_csv('Final_pearson.csv')['CNXIT_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'INFRA_U' , 'AUTO_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of CNXIT with Other Indices")
+plt.title("Correlation of CNXIT with Other Indices")
 plt.show()
 ```
-[0.44 0.39 0.44 0.43 0.44 0.51 1.   0.46]
+
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.013.png)
-
-\# creating the dataset
 ```
+# creating the dataset
 data = pd.read_csv('Final_pearson.csv')['AUTO_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'INFRA_U']
 y = data
 print(data)
-```
-\# creating the bar plot
-```
+# creating the bar plot
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of AUTO with Other Indices")
+plt.title("Correlation of AUTO with Other Indices")
 plt.show()
 ```
 
@@ -475,7 +444,7 @@ print(data)
 plt.figure(figsize=(12,6))
 plt.barh(x, y, color ='green',height = 0.4)
 plt.xlabel("Pearson's Coeff")
-plt.title("Corealtion of Nifty with Other Indices")
+plt.title("Correlation of Nifty with Other Indices")
 plt.show()
 ```
 
