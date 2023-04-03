@@ -60,7 +60,7 @@ print(df.head())
 
 ***Sample Output:***
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.001.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.001.png)
 ###
 
 
