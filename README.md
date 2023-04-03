@@ -208,6 +208,10 @@ for i in cols:
           f=False
 print(f)
 ```
+*OUTPUT:*
+```
+True
+```
 
 
 **Correlation Calculation:**
@@ -257,7 +261,7 @@ df.to_csv('Final_pearson.csv')
 
 
 
-### <a name="_ryac0rf6c4c7"></a>**DATA VISUALIZATION:**
+#### <a name="_ryac0rf6c4c7"></a>**DATA VISUALIZATION:**
 
 ```
 import matplotlib.pyplot as plt
@@ -344,156 +348,113 @@ print(data)
 ```
 \# creating the bar plot
 
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of NIFTYMETAL with Other Indices")
-
 plt.show()
-
+```
 [0.5  0.76 1.   0.67 0.61 0.74 0.44 0.65]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.009.png)
 
 \# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['NIFTYENERGY_U'].to\_numpy()
-
+```
+data = pd.read\_csv('Final_pearson.csv')['NIFTYENERGY_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'PHARMA_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
-
+x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'PHARMA_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
-
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Correlation of NIFTYENERGY with Other Indices")
-
 plt.show()
+```
 
-[0.47 0.84 0.67 1.   0.62 0.82 0.43 0.65]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.010.png)
 
 \# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['NIFTYBANK_U'].to\_numpy()
-
+```
+data = pd.read_csv('Final_pearson.csv')['NIFTYBANK_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
-
+x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
-
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Correlation of NIFTYBANK with Other Indices")
-
 plt.show()
+```
 
-[0.41 0.61 0.61 0.62 1.   0.76 0.44 0.72]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.011.png)
 
 \# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['INFRA_U'].to\_numpy()
-
+```
+data = pd.read_csv('Final_pearson.csv')['INFRA_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'AUTO_U']
-
+x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
-
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of INFRA with Other Indices")
-
 plt.show()
+```
 
-[0.56 0.8  0.74 0.82 0.76 1.   0.51 0.79]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.012.png)
 
 \# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['CNXIT_U'].to\_numpy()
-
+```
+data = pd.read_csv('Final_pearson.csv')['CNXIT_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'INFRA_U' , 'AUTO_U']
-
+x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'INFRA_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
-
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of CNXIT with Other Indices")
-
 plt.show()
-
+```
 [0.44 0.39 0.44 0.43 0.44 0.51 1.   0.46]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.013.png)
 
 \# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['AUTO_U'].to\_numpy()
-
+```
+data = pd.read_csv('Final_pearson.csv')['AUTO_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'INFRA_U']
-
+x = ['NIFTY_U ' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'INFRA_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
-
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of AUTO with Other Indices")
-
 plt.show()
-
+```
 [0.49 0.65 0.65 0.65 0.72 0.79 0.46 1.  ]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.014.png)
@@ -507,69 +468,42 @@ plt.show()
 
 
 
-#### <a name="_51eal23musn9"></a>HEAT MAPS
-
+#### <a name="_51eal23musn9"></a>HEAT MAPS:
+```
 import numpy as np
-
 import seaborn as sns
-
 from matplotlib.colors import ListedColormap
-
 print("The data to be plotted:\n")
-
 print(df10)
-
 data = np.asarray(df10)
-
 sns.heatmap( data,cmap=ListedColormap(['green', 'yellow', 'red']))
-
+```
 \# plotting the heatmap
-
-\# hm = sns.heatmap(data = df10)
-
 
 
 \# displaying the plotted heatmap
-
+```
 plt.show()
-
-\# cols = ["NAMES","NIFTY_U", "PHARMA_U", "NIFTYPSE_U", "NIFTYMETAL_U", "NIFTYENERGY_U", "NIFTYBANK_U", "INFRA_U", "CNXIT_U", "AUTO_U"]
+```
 ```
 df=pd.read_csv("Final_pearson.csv")
 import numpy as np
 import seaborn as sn
 import matplotlib.pyplot as plt
+\# generating 2-D 10x10 matrix of random numbers
+data = df[['NIFTY_U','PHARMA_U','NIFTYPSE_U','NIFTYMETAL_U','NIFTYENERGY_U','NIFTYBANK_U','INFRA_U','CNXIT_U','AUTO_U']]
+print("The data to be plotted:\n")
+print(data)
+sns.palplot(sn.color\_palette("coolwarm",7))
+plt.figure(figsize=(7, 7))
+plt.title('Correlation');
+hm = sn.heatmap(data = data,cmap="coolwarm")
+\# displaying the plotted heatmap
 ```
 
-
-\# generating 2-D 10x10 matrix of random numbers
-
-\# from 1 to 100
-
-data = df[['NIFTY_U','PHARMA_U','NIFTYPSE_U','NIFTYMETAL_U','NIFTYENERGY_U','NIFTYBANK_U','INFRA_U','CNXIT_U','AUTO_U']]
-
-print("The data to be plotted:\n")
-
-print(data)
-
-\# plotting the heatmap
-
-sns.palplot(sn.color\_palette("coolwarm",7))
-
-plt.figure(figsize=(7, 7))
-
-\# plt.yticks(list(reversed(range(len(df)))), ['Index '+str(x) for x in indices], rotation='horizontal')
-
-plt.title('Correlation');
-
-hm = sn.heatmap(data = data,cmap="coolwarm")
-
-
-
-\# displaying the plotted heatmap
-
+```
 plt.show()
-
+```
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.016.jpeg)
 
 
