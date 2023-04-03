@@ -21,35 +21,23 @@ We used nsepy to get the data. Nsepy is a python module provided by nse to acces
 
 #### <a name="_92ogniuj7or1"></a>Source code:
 
+```
 !pip install nsepy
-
-from nsepy import get\_history
-
+from nsepy import get_history
 from datetime import date
-
 start  =date(2018, 1,1)
-
 end = date(2023 , 1 ,1)
-
 symbol = 'NIFTY 50'
-
-data = get\_history(symbol = symbol , start = start , end = end , index = True)
-
+data = get_history(symbol = symbol , start = start , end = end , index = True)
 print(data)
-
-data.to\_csv('NIFTY50.csv')
+data.to_csv('NIFTY50.csv')
 
 #Sample Source Code for Jugaad Data
-
-from jugaad\_data.nse import index\_csv, index\_df
-
-\# Download as pandas dataframe
-
-df = index\_df(symbol="NIFTY 50", from\_date=date(2020,1,1),
-
-`            `to\_date=date(2020,1,30))
-
+from jugaad_data.nse import index_csv, index_df
+# Download as pandas dataframe
+df = index_df(symbol="NIFTY 50", from_date=date(2020,1,1),to_date=date(2020,1,30))
 print(df.head())
+```
 
 
 
@@ -84,12 +72,11 @@ print(df.head())
 
 - Loading the dataset and dropping out unnecessary columns
 
-val='{name\_of\_the\_file}.csv'
-
-dataset = pd.read\_csv(val)
-
+```
+val='{name_of_the_file}.csv'
+dataset = pd.read_csv(val)
 dataset = dataset.drop(['Turnover','Volume'], axis=1)
-
+```
 
 
 
@@ -108,35 +95,30 @@ dataset = dataset.drop(['Turnover','Volume'], axis=1)
 
 **Sample Output:**
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.002.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.002.png)
 
 - Calculating candle change and storing it in the csv file as column 
 
+```
 dataset['%Cchange'] = ((dataset['Close']-dataset['Open'])/dataset['Open'])\*100;
-
-dataset.to\_csv(val)
-
+dataset.to_csv(val)
+```
 
 - Calculating the percentage change from the previous day close and storing it in csv 
-
-dataset['%Pchange'] = ((dataset['Close'].diff())/dataset['Close'])\*100;
-
+```
+dataset['%Pchange'] = ((dataset['Close'].diff())/dataset['Close'])*100;
+```
 - There were some values missing as NaN. So we needed to fill those values with specific data.
 
-f\_closeC = dataset.iloc[:, -3].values
-
-f\_closeP = dataset.iloc[:, -2].values
-
-f\_close = (f\_closeC[0]+f\_closeC[0]\*(f\_closeP[0]/100));
-
-CX = ((f\_closeC[0]-f\_close)/f\_close)\*100
-
+```
+f_closeC = dataset.iloc[:, -3].values
+f_closeP = dataset.iloc[:, -2].values
+f_close = (f_closeC[0]+f_closeC[0]*(f_closeP[0]/100));
+CX = ((f_closeC[0]-f_close)/f_close)*100
 dataset.loc[0,'%Pchange'] = str(CX)
-
-dataset.to\_csv(val)
-
+dataset.to_csv(val)
 print (dataset)
-
+```
 
 
 
@@ -144,146 +126,88 @@ print (dataset)
 
 **Sample Output:**
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.003.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.003.png)
 
 - Removing extra data from csv by taking date as a reference . Here we are considering only those days whose information is present in all the csv and removing all the extra data . 
 
 - Taking all csv file and converting it into array for further processing
-
+```
 dataset1=pd.read\_csv('AUTO\_U.csv')
-
 d1=np.array(dataset1)
-
 print(d1)
-
 dataset2=pd.read\_csv('CNXIT\_U.csv')
-
 d2=np.array(dataset2)
-
 print(d2)
-
 dataset3=pd.read\_csv('INFRA\_U.csv')
-
 d3=np.array(dataset3)
-
 print(d3)
-
 dataset4=pd.read\_csv('NIFTYBANK\_U.csv')
-
 d4=np.array(dataset4)
-
 print(d4)
-
 dataset5=pd.read\_csv('NIFTYENERGY\_U.csv')
-
 d5=np.array(dataset5)
-
 print(d5)
-
 dataset6=pd.read\_csv('NIFTYMETAL\_U.csv')
-
 d6=np.array(dataset6)
-
 print(d6)
-
 dataset7=pd.read\_csv('NIFTYPSE\_U.csv')
-
 d7=np.array(dataset7)
-
 print(d7)
-
 dataset8=pd.read\_csv('NIFTY\_U.csv')
-
 d8=np.array(dataset8)
-
 print(d8)
-
 dataset9=pd.read\_csv('PHARMA\_U.csv')
-
 d9=np.array(dataset9)
-
 print(d9)
+```
 
 
 - By using reduce class we are taking the intersection of all classes and storing it in I
 
+```
 from functools import reduce
-
-I = reduce(
-
-`    `lambda l,r: np.intersect1d(l,r,True),
-
-`    `(i[:,1] for i in (d1,d2,d3,d4,d5,d6,d7,d8,d9)))
+I = reduce(lambda l,r: np.intersect1d(l,r,True), (i[:,1] for i in (d1,d2,d3,d4,d5,d6,d7,d8,d9)))
+```
 
 - Create a new array by keeping only those dates which are present with I and converting it into csv and storing it in files
-
+```
 d11=d1[np.searchsorted(d1[:,1], I)]
-
-pd.DataFrame(d11).to\_csv('AUTO\_U.csv', index=False)
-
+pd.DataFrame(d11).to_csv('AUTO_U.csv', index=False)
 d12=d2[np.searchsorted(d2[:,1], I)]
-
-pd.DataFrame(d12).to\_csv('CNXIT\_U.csv', index=False)
-
+pd.DataFrame(d12).to_csv('CNXIT_U.csv', index=False)
 d13=d3[np.searchsorted(d3[:,1], I)]
-
-pd.DataFrame(d13).to\_csv('INFRA\_U.csv' ,index=False)
-
+pd.DataFrame(d13).to_csv('INFRA_U.csv' ,index=False)
 d14=d4[np.searchsorted(d4[:,1], I)]
-
-pd.DataFrame(d14).to\_csv('NIFTYBANK\_U.csv' ,index=False)
-
+pd.DataFrame(d14).to_csv('NIFTYBANK_U.csv' ,index=False)
 d15=d5[np.searchsorted(d5[:,1], I)]
-
-pd.DataFrame(d15).to\_csv('NIFTYENERGY\_U.csv', index=False)
-
+pd.DataFrame(d15).to_csv('NIFTYENERGY_U.csv', index=False)
 d16=d6[np.searchsorted(d6[:,1], I)]
-
-pd.DataFrame(d16).to\_csv('NIFTYMETAL\_U.csv', index=False)
-
+pd.DataFrame(d16).to_csv('NIFTYMETAL_U.csv', index=False)
 d17=d7[np.searchsorted(d7[:,1], I)]
-
-pd.DataFrame(d17).to\_csv('NIFTYPSE\_U.csv', index=False)
-
+pd.DataFrame(d17).to_csv('NIFTYPSE_U.csv', index=False)
 d18=d8[np.searchsorted(d8[:,1], I)]
-
-pd.DataFrame(d18).to\_csv('NIFTY\_U.csv', index=False)
-
+pd.DataFrame(d18).to_csv('NIFTY_U.csv', index=False)
 d19=d9[np.searchsorted(d9[:,1], I)]
-
-pd.DataFrame(d19).to\_csv('PHARMA\_U.csv', index=False)
-
+pd.DataFrame(d19).to_csv('PHARMA_U.csv', index=False)
+```
 - Confirming whether the above data is consistent or not:
-
-cols= ['AUTO\_U.csv','CNXIT\_U.csv','INFRA\_U.csv','NIFTYBANK\_U.csv','NIFTYENERGY\_U.csv','NIFTYMETAL\_U.csv','NIFTY\_U.csv','PHARMA\_U.csv']
-
+```
+cols= ['AUTO_U.csv','CNXIT_U.csv','INFRA_U.csv','NIFTYBANK_U.csv','NIFTYENERGY_U.csv','NIFTYMETAL_U.csv','NIFTY_U.csv','PHARMA_U.csv']
 dataset =[]
-
 f=True
-
 for i in cols:
-
-`  `dataf = pd.read\_csv(i)
-
-`  `df = np.array(dataf)
-
-`  `for j in cols:
-
-`    `dataf1=pd.read\_csv(j)
-
-`    `df1 = np.array(dataf1)
-
-`    `for k in df[:,1]:
-
-`      `if k in df1[:,1]:
-
-`        `continue
-
-`      `else:
-
-`        `f=False
-
+  dataf = pd.read_csv(i)
+  df = np.array(dataf)
+    for j in cols:
+      dataf1=pd.read_csv(j)
+      df1 = np.array(dataf1)
+      for k in df[:,1]:
+        if k in df1[:,1]:
+          continue
+        else:
+          f=False
 print(f)
+```
 
 
 **Correlation Calculation:**
@@ -297,7 +221,7 @@ The correlation calculation phase involves determining the degree to which two v
 
 
 Source code:
-
+```
 import pandas as pd
 
 import numpy as np
@@ -345,10 +269,10 @@ df[' ']= ['NIFTY\_U' , 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERG
 df = df[[' ' , 'NIFTY\_U', 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']]
 
 df.to\_csv('Final\_pearson.csv')
-
+```
 **OUTPUT:**
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.004.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.004.png)
 
 - Overall, the correlation calculation phase is an important step in analysing the relationship between two variables, and can help to identify patterns and trends in data.
 - This coefficient ranges from -1 to +1, with values of -1 indicating a perfect negative correlation, values of +1 indicating a perfect positive correlation, and values of 0 indicating no correlation.
