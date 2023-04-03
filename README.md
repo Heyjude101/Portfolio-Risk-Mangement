@@ -95,7 +95,7 @@ dataset = dataset.drop(['Turnover','Volume'], axis=1)
 
 **Sample Output:**
 
-![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.002.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.002.png)
 
 - Calculating candle change and storing it in the csv file as column 
 
@@ -126,7 +126,7 @@ print (dataset)
 
 **Sample Output:**
 
-![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.003.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.003.png)
 
 - Removing extra data from csv by taking date as a reference . Here we are considering only those days whose information is present in all the csv and removing all the extra data . 
 
@@ -223,56 +223,33 @@ The correlation calculation phase involves determining the degree to which two v
 Source code:
 ```
 import pandas as pd
-
 import numpy as np
-
 from scipy.stats import pearsonr
-
 dataNiftyC = pd.read\_csv('NIFTY\_U.csv')['%Pchange'].to\_numpy()
-
 dataPharmaC = pd.read\_csv('PHARMA\_U.csv')['%Pchange'].to\_numpy()
-
 dataPseC  =pd.read\_csv('NIFTYPSE\_U.csv')['%Pchange'].to\_numpy()
-
 dataMetalC = pd.read\_csv('NIFTYMETAL\_U.csv')['%Pchange'].to\_numpy()
-
 dataEnergyC  =pd.read\_csv('NIFTYENERGY\_U.csv')['%Pchange'].to\_numpy()
-
 dataBankC = pd.read\_csv('NIFTYBANK\_U.csv')['%Pchange'].to\_numpy()
-
 dataInfraC = pd.read\_csv('INFRA\_U.csv')['%Pchange'].to\_numpy()
-
 dataItC  =pd.read\_csv('CNXIT\_U.csv')['%Pchange'].to\_numpy()
-
 dataAutoC = pd.read\_csv('AUTO\_U.csv')['%Pchange'].to\_numpy()
-
 datalist =[dataNiftyC , dataPharmaC , dataPseC , dataMetalC , dataEnergyC , dataBankC , dataInfraC ,dataItC ,dataAutoC]
-
 ll = []
-
 for i in datalist:
-
-`  `l = []
-
-`  `for j in datalist:
-
-`    `r,p  = pearsonr(i,j)
-
-`    `l.append('%.2f' % r)
-
-`  `ll.append(l)
-
-df = pd.DataFrame(ll, columns =['NIFTY\_U' , 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U'])
-
-df[' ']= ['NIFTY\_U' , 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
-
-df = df[[' ' , 'NIFTY\_U', 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']]
-
-df.to\_csv('Final\_pearson.csv')
+    l = []
+    for j in datalist:
+      r,p  = pearsonr(i,j)
+      l.append('%.2f' % r)
+    ll.append(l)
+df = pd.DataFrame(ll, columns =['NIFTY_U' , 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U'])
+df[' ']= ['NIFTY_U' , 'PHARMA\_U' , 'NIFTYPSE_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
+df = df[[' ' , 'NIFTY_U', 'PHARMA_U' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']]
+df.to_csv('Final_pearson.csv')
 ```
 **OUTPUT:**
 
-![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.004.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.004.png)
 
 - Overall, the correlation calculation phase is an important step in analysing the relationship between two variables, and can help to identify patterns and trends in data.
 - This coefficient ranges from -1 to +1, with values of -1 indicating a perfect negative correlation, values of +1 indicating a perfect positive correlation, and values of 0 indicating no correlation.
@@ -282,92 +259,69 @@ df.to\_csv('Final\_pearson.csv')
 
 ### <a name="_ryac0rf6c4c7"></a>**DATA VISUALIZATION:**
 
-
+```
 import matplotlib.pyplot as plt
-
 import pandas as pd
-
-df=pd.read\_csv("Final\_pearson.csv")
-
+df=pd.read_csv("Final_pearson.csv")
+```
 **OUTPUT:**
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.005.jpeg)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.005.jpeg)
 
 
 
 
 ### <a name="_jv8kyeyl0i0"></a>BAR PLOTS:
+```
 import numpy as np
-
 import matplotlib.pyplot as plt
-
 import pandas as pd
-
-\# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['NIFTY\_U'].to\_numpy()
-
+# creating the dataset
+data = pd.read_csv('Final_pearson.csv')['NIFTY_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['PHARMA\_U' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
-
+x = ['PHARMA_U' , 'NIFTYPSE_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 
 \# creating the dataset# creating the bar plot
 
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of Nifty with Other Indices")
-
 plt.show()
-
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.006.png)# creating the dataset
-
+```
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.006.png)# creating the dataset
+```
 data = pd.read\_csv('Final\_pearson.csv')['PHARMA\_U'].to\_numpy()
-
 data  =np.delete(data , [0])
-
-x = ['NIFTY\_U ' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
-
+x = ['PHARMA_U' , 'NIFTYPSE_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
 
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of PHARMA with Other Indices")
-
 plt.show()
+```
 
-[1.   0.48 0.5  0.47 0.41 0.56 0.44 0.49]
-
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.007.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.007.png)
 
 \# creating the dataset
 
-data = pd.read\_csv('Final\_pearson.csv')['NIFTYPSE\_U'].to\_numpy()
-
+```
+data = pd.read_csv('Final_pearson.csv')['NIFTYPSE_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY\_U ' , 'PHARMA\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
-
+x = ['PHARMA_U' , 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
 
 plt.figure(figsize=(12,6))
@@ -382,7 +336,7 @@ plt.show()
 
 [0.48 1.   0.76 0.84 0.61 0.8  0.39 0.65]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.008.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.008.png)
 
 \# creating the dataset
 
@@ -410,7 +364,7 @@ plt.show()
 
 [0.5  0.76 1.   0.67 0.61 0.74 0.44 0.65]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.009.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.009.png)
 
 \# creating the dataset
 
@@ -438,7 +392,7 @@ plt.show()
 
 [0.47 0.84 0.67 1.   0.62 0.82 0.43 0.65]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.010.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.010.png)
 
 \# creating the dataset
 
@@ -466,7 +420,7 @@ plt.show()
 
 [0.41 0.61 0.61 0.62 1.   0.76 0.44 0.72]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.011.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.011.png)
 
 \# creating the dataset
 
@@ -494,7 +448,7 @@ plt.show()
 
 [0.56 0.8  0.74 0.82 0.76 1.   0.51 0.79]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.012.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.012.png)
 
 \# creating the dataset
 
@@ -522,7 +476,7 @@ plt.show()
 
 [0.44 0.39 0.44 0.43 0.44 0.51 1.   0.46]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.013.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.013.png)
 
 \# creating the dataset
 
@@ -550,13 +504,13 @@ plt.show()
 
 [0.49 0.65 0.65 0.65 0.72 0.79 0.46 1.  ]
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.014.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.014.png)
 
 
 #### <a name="_23kofub6ei2"></a>LINE PLOTS:
 
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.015.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.015.png)
 
 
 
@@ -627,11 +581,11 @@ hm = sn.heatmap(data = data,cmap="coolwarm")
 
 plt.show()
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.016.jpeg)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.016.jpeg)
 
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.017.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.017.png)
 
 *Reference:*
 
-![](Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.018.png)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.018.png)
