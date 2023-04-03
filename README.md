@@ -100,7 +100,7 @@ dataset = dataset.drop(['Turnover','Volume'], axis=1)
 - Calculating candle change and storing it in the csv file as column 
 
 ```
-dataset['%Cchange'] = ((dataset['Close']-dataset['Open'])/dataset['Open'])\*100;
+dataset['%Cchange'] = ((dataset['Close']-dataset['Open'])/dataset['Open'])*100;
 dataset.to_csv(val)
 ```
 
@@ -132,31 +132,31 @@ print (dataset)
 
 - Taking all csv file and converting it into array for further processing
 ```
-dataset1=pd.read\_csv('AUTO\_U.csv')
+dataset1=pd.read_csv('AUTO_U.csv')
 d1=np.array(dataset1)
 print(d1)
-dataset2=pd.read\_csv('CNXIT\_U.csv')
+dataset2=pd.read_csv('CNXIT_U.csv')
 d2=np.array(dataset2)
 print(d2)
-dataset3=pd.read\_csv('INFRA\_U.csv')
+dataset3=pd.read_csv('INFRA_U.csv')
 d3=np.array(dataset3)
 print(d3)
-dataset4=pd.read\_csv('NIFTYBANK\_U.csv')
+dataset4=pd.read_csv('NIFTYBANK_U.csv')
 d4=np.array(dataset4)
 print(d4)
-dataset5=pd.read\_csv('NIFTYENERGY\_U.csv')
+dataset5=pd.read_csv('NIFTYENERGY_U.csv')
 d5=np.array(dataset5)
 print(d5)
-dataset6=pd.read\_csv('NIFTYMETAL\_U.csv')
+dataset6=pd.read_csv('NIFTYMETAL_U.csv')
 d6=np.array(dataset6)
 print(d6)
-dataset7=pd.read\_csv('NIFTYPSE\_U.csv')
+dataset7=pd.read_csv('NIFTYPSE_U.csv')
 d7=np.array(dataset7)
 print(d7)
-dataset8=pd.read\_csv('NIFTY\_U.csv')
+dataset8=pd.read_csv('NIFTY_U.csv')
 d8=np.array(dataset8)
 print(d8)
-dataset9=pd.read\_csv('PHARMA\_U.csv')
+dataset9=pd.read_csv('PHARMA_U.csv')
 d9=np.array(dataset9)
 print(d9)
 ```
@@ -225,15 +225,15 @@ Source code:
 import pandas as pd
 import numpy as np
 from scipy.stats import pearsonr
-dataNiftyC = pd.read\_csv('NIFTY\_U.csv')['%Pchange'].to\_numpy()
-dataPharmaC = pd.read\_csv('PHARMA\_U.csv')['%Pchange'].to\_numpy()
-dataPseC  =pd.read\_csv('NIFTYPSE\_U.csv')['%Pchange'].to\_numpy()
-dataMetalC = pd.read\_csv('NIFTYMETAL\_U.csv')['%Pchange'].to\_numpy()
-dataEnergyC  =pd.read\_csv('NIFTYENERGY\_U.csv')['%Pchange'].to\_numpy()
-dataBankC = pd.read\_csv('NIFTYBANK\_U.csv')['%Pchange'].to\_numpy()
-dataInfraC = pd.read\_csv('INFRA\_U.csv')['%Pchange'].to\_numpy()
-dataItC  =pd.read\_csv('CNXIT\_U.csv')['%Pchange'].to\_numpy()
-dataAutoC = pd.read\_csv('AUTO\_U.csv')['%Pchange'].to\_numpy()
+dataNiftyC = pd.read_csv('NIFTY_U.csv')['%Pchange'].to_numpy()
+dataPharmaC = pd.read_csv('PHARMA_U.csv')['%Pchange'].to_numpy()
+dataPseC  =pd.read_csv('NIFTYPSE_U.csv')['%Pchange'].to_numpy()
+dataMetalC = pd.read_csv('NIFTYMETAL_U.csv')['%Pchange'].to_numpy()
+dataEnergyC  =pd.read_csv('NIFTYENERGY_U.csv')['%Pchange'].to_numpy()
+dataBankC = pd.read_csv('NIFTYBANK_U.csv')['%Pchange'].to_numpy()
+dataInfraC = pd.read_csv('INFRA_U.csv')['%Pchange'].to_numpy()
+dataItC  =pd.read_csv('CNXIT_U.csv')['%Pchange'].to_numpy()
+dataAutoC = pd.read_csv('AUTO_U.csv')['%Pchange'].to_numpy()
 datalist =[dataNiftyC , dataPharmaC , dataPseC , dataMetalC , dataEnergyC , dataBankC , dataInfraC ,dataItC ,dataAutoC]
 ll = []
 for i in datalist:
@@ -242,9 +242,9 @@ for i in datalist:
       r,p  = pearsonr(i,j)
       l.append('%.2f' % r)
     ll.append(l)
-df = pd.DataFrame(ll, columns =['NIFTY_U' , 'PHARMA\_U' , 'NIFTYPSE\_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U'])
-df[' ']= ['NIFTY_U' , 'PHARMA\_U' , 'NIFTYPSE_U', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
-df = df[[' ' , 'NIFTY_U', 'PHARMA_U' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']]
+df = pd.DataFrame(ll, columns =['NIFTY_U' , 'PHARMA_U' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U'])
+df[' ']= ['NIFTY_U' , 'PHARMA_U' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
+df = df[[' ' , 'NIFTY_U', 'PHARMA_U' , 'NIFTYPSE_U', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']]
 df.to_csv('Final_pearson.csv')
 ```
 **OUTPUT:**
@@ -295,7 +295,7 @@ plt.show()
 ```
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.006.png)# creating the dataset
 ```
-data = pd.read\_csv('Final\_pearson.csv')['PHARMA\_U'].to\_numpy()
+data = pd.read_csv('Final_pearson.csv')['PHARMA_U'].to_numpy()
 data  =np.delete(data , [0])
 x = ['PHARMA_U' , 'NIFTYPSE_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
@@ -323,33 +323,25 @@ y = data
 print(data)
 ```
 \# creating the bar plot
-
+```
 plt.figure(figsize=(12,6))
-
 plt.barh(x, y, color ='green',height = 0.4)
-
 plt.xlabel("Pearson's Coeff")
-
 plt.title("Corealtion of NIFTYPSE with Other Indices")
-
 plt.show()
-
+```
 [0.48 1.   0.76 0.84 0.61 0.8  0.39 0.65]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.008.png)
 
 \# creating the dataset
-
-data = pd.read\_csv('Final\_pearson.csv')['NIFTYMETAL\_U'].to\_numpy()
-
+```
+data = pd.read_csv('Final_pearson.csv')['NIFTYMETAL_U'].to_numpy()
 data  =np.delete(data , [0])
-
-x = ['NIFTY\_U ' , 'NIFTYPSE\_U', 'PHARMA\_U' ,'NIFTYENERGY\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
-
+x = ['NIFTY_U ' , 'NIFTYPSE_U', 'PHARMA_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 y = data
-
 print(data)
-
+```
 \# creating the bar plot
 
 plt.figure(figsize=(12,6))
@@ -368,11 +360,11 @@ plt.show()
 
 \# creating the dataset
 
-data = pd.read\_csv('Final\_pearson.csv')['NIFTYENERGY\_U'].to\_numpy()
+data = pd.read\_csv('Final\_pearson.csv')['NIFTYENERGY_U'].to\_numpy()
 
 data  =np.delete(data , [0])
 
-x = ['NIFTY\_U ' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'PHARMA\_U', 'NIFTYBANK\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
+x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'PHARMA_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 
 y = data
 
@@ -396,11 +388,11 @@ plt.show()
 
 \# creating the dataset
 
-data = pd.read\_csv('Final\_pearson.csv')['NIFTYBANK\_U'].to\_numpy()
+data = pd.read\_csv('Final\_pearson.csv')['NIFTYBANK_U'].to\_numpy()
 
 data  =np.delete(data , [0])
 
-x = ['NIFTY\_U ' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'PHARMA\_U' , 'INFRA\_U' , 'CNXIT\_U' , 'AUTO\_U']
+x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
 
 y = data
 
@@ -424,11 +416,11 @@ plt.show()
 
 \# creating the dataset
 
-data = pd.read\_csv('Final\_pearson.csv')['INFRA\_U'].to\_numpy()
+data = pd.read\_csv('Final\_pearson.csv')['INFRA_U'].to\_numpy()
 
 data  =np.delete(data , [0])
 
-x = ['NIFTY\_U ' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'PHARMA\_U' , 'NIFTYBANK\_U' , 'CNXIT\_U' , 'AUTO\_U']
+x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'AUTO_U']
 
 y = data
 
@@ -452,11 +444,11 @@ plt.show()
 
 \# creating the dataset
 
-data = pd.read\_csv('Final\_pearson.csv')['CNXIT\_U'].to\_numpy()
+data = pd.read\_csv('Final\_pearson.csv')['CNXIT_U'].to\_numpy()
 
 data  =np.delete(data , [0])
 
-x = ['NIFTY\_U ' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'PHARMA\_U' , 'NIFTYBANK\_U' , 'INFRA\_U' , 'AUTO\_U']
+x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'INFRA_U' , 'AUTO_U']
 
 y = data
 
@@ -480,11 +472,11 @@ plt.show()
 
 \# creating the dataset
 
-data = pd.read\_csv('Final\_pearson.csv')['AUTO\_U'].to\_numpy()
+data = pd.read\_csv('Final\_pearson.csv')['AUTO_U'].to\_numpy()
 
 data  =np.delete(data , [0])
 
-x = ['NIFTY\_U ' , 'NIFTYPSE\_', 'NIFTYMETAL\_U' ,'NIFTYENERGY\_U', 'PHARMA\_U' , 'NIFTYBANK\_U' , 'CNXIT\_U' , 'INFRA\_U']
+x = ['NIFTY_U ' , 'NIFTYPSE\_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'PHARMA_U' , 'NIFTYBANK_U' , 'CNXIT_U' , 'INFRA_U']
 
 y = data
 
@@ -541,23 +533,20 @@ sns.heatmap( data,cmap=ListedColormap(['green', 'yellow', 'red']))
 
 plt.show()
 
-\# cols = ["NAMES","NIFTY\_U", "PHARMA\_U", "NIFTYPSE\_U", "NIFTYMETAL\_U", "NIFTYENERGY\_U", "NIFTYBANK\_U", "INFRA\_U", "CNXIT\_U", "AUTO\_U"]
-
-df=pd.read\_csv("Final\_pearson.csv")
-
+\# cols = ["NAMES","NIFTY_U", "PHARMA_U", "NIFTYPSE_U", "NIFTYMETAL_U", "NIFTYENERGY_U", "NIFTYBANK_U", "INFRA_U", "CNXIT_U", "AUTO_U"]
+```
+df=pd.read_csv("Final_pearson.csv")
 import numpy as np
-
 import seaborn as sn
-
 import matplotlib.pyplot as plt
-
+```
 
 
 \# generating 2-D 10x10 matrix of random numbers
 
 \# from 1 to 100
 
-data = df[['NIFTY\_U','PHARMA\_U','NIFTYPSE\_U','NIFTYMETAL\_U','NIFTYENERGY\_U','NIFTYBANK\_U','INFRA\_U','CNXIT\_U','AUTO\_U']]
+data = df[['NIFTY_U','PHARMA_U','NIFTYPSE_U','NIFTYMETAL_U','NIFTYENERGY_U','NIFTYBANK_U','INFRA_U','CNXIT_U','AUTO_U']]
 
 print("The data to be plotted:\n")
 
