@@ -1,9 +1,14 @@
 
 
 ## <a name="_cjzgm2fs02uy"></a>**Introduction:**
+
+
 ## <a name="_z5mugefo9p5k"></a>**Risk management in portfolio optimization:**
 
-![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/banner.jpg)
+![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/bans.jpg)
+
+##
+
 Correlation diversification is a risk management technique used to protect portfolios against market volatility by spreading investments across different asset classes with low correlations to each other. The idea behind correlation diversification is that by investing in assets that are not highly correlated, the portfolio will be less vulnerable to large swings in any one asset class. For example, if an investor puts all their money in stocks, the portfolio is highly exposed to stock market risk. However, if the investor also invests in bonds or real estate, which have historically shown low correlation with stocks, the portfolio's overall risk may be reduced. The concept of correlation diversification can be applied to both individual portfolios and larger, more complex investment strategies such as mutual funds, hedge funds, and exchange-traded funds (ETFs). These investment vehicles often hold a mix of different asset classes to achieve diversification. It's worth noting that correlation diversification does not eliminate risk entirely, but it can help reduce risk and protect portfolios during times of market volatility. It is also important to regularly monitor and adjust the portfolio to ensure that the assets' correlation remains low and the diversification strategy is working effectively. Overall, correlation diversification is an effective tool for protecting portfolios and managing risk. By investing in a mix of assets with low correlations, investors can potentially achieve more stable returns and mitigate the impact of market fluctuations.
 ### <a name="_dhfrmc9hhzvk"></a>**PROBLEM STATEMENT:**
 
@@ -208,7 +213,7 @@ for i in cols:
           f=False
 print(f)
 ```
-*OUTPUT:*
+**OUTPUT:**
 ```
 True
 ```
@@ -342,6 +347,7 @@ plt.show()
 ```
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.009.png)
+
 ```
 # creating the dataset
 data = pd.read\_csv('Final_pearson.csv')['NIFTYENERGY_U'].to_numpy()
@@ -359,6 +365,7 @@ plt.show()
 
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.010.png)
+
 ```
 # creating the dataset
 data = pd.read_csv('Final_pearson.csv')['NIFTYBANK_U'].to_numpy()
@@ -410,6 +417,7 @@ plt.show()
 
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.013.png)
+
 ```
 # creating the dataset
 data = pd.read_csv('Final_pearson.csv')['AUTO_U'].to_numpy()
@@ -455,6 +463,7 @@ plt.show()
 
 
 #### <a name="_51eal23musn9"></a>HEAT MAPS:
+
 ```
 import numpy as np
 import seaborn as sns
