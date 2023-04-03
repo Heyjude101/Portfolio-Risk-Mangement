@@ -455,12 +455,29 @@ plt.xlabel("Pearson's Coeff")
 plt.title("Corealtion of AUTO with Other Indices")
 plt.show()
 ```
-[0.49 0.65 0.65 0.65 0.72 0.79 0.46 1.  ]
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.014.png)
 
 
 #### <a name="_23kofub6ei2"></a>LINE PLOTS:
+```
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+# creating the dataset
+data = pd.read_csv('Final_pearson.csv')['NIFTY_U'].to_numpy()
+data  =np.delete(data , [0])
+x = ['PHARMA_U' , 'NIFTYPSE_', 'NIFTYMETAL_U' ,'NIFTYENERGY_U', 'NIFTYBANK_U' , 'INFRA_U' , 'CNXIT_U' , 'AUTO_U']
+y = data
+print(data)
+
+# creating the bar plot
+plt.figure(figsize=(12,6))
+plt.barh(x, y, color ='green',height = 0.4)
+plt.xlabel("Pearson's Coeff")
+plt.title("Corealtion of Nifty with Other Indices")
+plt.show()
+```
 
 
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.015.png)
@@ -477,20 +494,14 @@ print("The data to be plotted:\n")
 print(df10)
 data = np.asarray(df10)
 sns.heatmap( data,cmap=ListedColormap(['green', 'yellow', 'red']))
-```
-\# plotting the heatmap
-
-
-\# displaying the plotted heatmap
-```
+# plotting the heatmap
+# displaying the plotted heatmap
 plt.show()
-```
-```
 df=pd.read_csv("Final_pearson.csv")
 import numpy as np
 import seaborn as sn
 import matplotlib.pyplot as plt
-\# generating 2-D 10x10 matrix of random numbers
+# generating 2-D 10x10 matrix of random numbers
 data = df[['NIFTY_U','PHARMA_U','NIFTYPSE_U','NIFTYMETAL_U','NIFTYENERGY_U','NIFTYBANK_U','INFRA_U','CNXIT_U','AUTO_U']]
 print("The data to be plotted:\n")
 print(data)
@@ -498,10 +509,7 @@ sns.palplot(sn.color\_palette("coolwarm",7))
 plt.figure(figsize=(7, 7))
 plt.title('Correlation');
 hm = sn.heatmap(data = data,cmap="coolwarm")
-\# displaying the plotted heatmap
-```
-
-```
+# displaying the plotted heatmap
 plt.show()
 ```
 ![](https://github.com/heyjude101/Portfolio-Risk-Mangement/blob/main/images/Aspose.Words.00d30626-92c3-4e62-a5c8-c844d6df9a68.016.jpeg)
