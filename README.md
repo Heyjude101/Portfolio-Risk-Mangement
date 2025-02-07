@@ -1,8 +1,3 @@
-All Contributers:
-- Ritik Raj
-- Akarsh Priyadarshan
-- Ananta shrivastava
-
 ## <a name="_cjzgm2fs02uy"></a>**Introduction:**
 
 
